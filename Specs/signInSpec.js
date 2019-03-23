@@ -2,14 +2,21 @@
 
 	var EC = protractor.ExpectedConditions;
 
-	// locate required elements
+	/*
+	locate required elements
+	*/
 	var inputs = element(by.className('row')).all(by.tagName('input'));
 	var signInButton = element(by.id('signInButton'));
 	var logOutButton = element(by.id('logOut'));
 
-	// locate updates header in home page
+	/*
+	locate updates header in home page
+	*/
 	var updatesHeader = element(by.id('updates'));
 
+	/*
+	a function to do the signing in process
+	*/
 	function signIn(inputUsername, inputPassword) {
 
 		inputs.get(0).sendKeys(inputUsername);
@@ -19,8 +26,11 @@
 	
 	beforeEach(function() {
 
-		// for non-angular pages
-		// browser.ignoreSynchronization = true;
+		/*
+		for non-angular pages
+
+		browser.ignoreSynchronization = true;
+		*/
 
 		browser.get('http://localhost:4200/');
 	});

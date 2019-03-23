@@ -14,8 +14,9 @@ exports.config = {
 
 onPrepare: function () {
 
-        // xml report generated for dashboard
-
+        /*
+		xml report generated for dashboard
+		*/
         jasmine.getEnv().addReporter(new jasmineReporters.JUnitXmlReporter({
 
             consolidateAll: true,
