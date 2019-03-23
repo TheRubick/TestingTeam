@@ -2,8 +2,6 @@
 
 var jasmineReporters = require('jasmine-reporters');
 
-
-
 var reportsDirectory  = './reports';
 
 var  dashboardReportDirectory = reportsDirectory + '/dashboardReport';
@@ -13,36 +11,8 @@ exports.config = {
   seleniumAddress: 'http://localhost:4444/wd/hub',
   specs: ['Specs/*Spec.js'],
 
-  //baseUrl: 'file:///C:/Users/Lenovo/Desktop/Super%20Calculator.html',
-
-/*
-  onPrepare: function()
-  {
-    // By default, Protractor use data:text/html,<html></html> as resetUrl, but
-   // location.replace from the data: to the file: protocol is not allowed
-   // (we'll get ‘not allowed local resource’ error), so we replace resetUrl with one
-   // with the file: protocol (this particular one will open system's root folder)
-   browser.ignoreSynchronization = true;
-   browser.waitForAngular(true);
-   browser.sleep(1000);
-   browser.resetUrl = 'file:///';
-
- },
-
-  jasmineNodeOpts: {
-    showingColors: true, // Use colors in the command line report.
-  }
-*/
 
 onPrepare: function () {
-
-
-  /*
-  browser.ignoreSynchronization = true;
-  browser.waitForAngular(true);
-  browser.sleep(1000);
-
-  */
 
         // xml report generated for dashboard
 
