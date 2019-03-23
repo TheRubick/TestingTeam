@@ -1,6 +1,6 @@
 'use strict'
 
-describe('First test in Protractor', function ()  {
+describe('Checking the Home page Functionalities', function ()  {
 
 
   var signInButton = element(by.id("signInButton"));

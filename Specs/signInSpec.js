@@ -16,6 +16,7 @@
 		signInButton.click();
     }
 
+
     beforeEach(function() {
 
 		// for non-angular pages
@@ -24,6 +25,7 @@
 		browser.get('http://localhost:4200/');
 	});
 
+
 	afterEach(function () {
 
 		var logOutButton = element(by.partialButtonText('Log out'));
@@ -31,14 +33,14 @@
 		logOutButton.click();
 	});
 
-	it('Should sign in successfuly', function (done) {
+	it('Should sign in successfuly', function () {
 
         signIn('test', 'test');
 
 		expect(updatesHeader.getText()).toEqual('Updates');
     });
 
-	it('Should fail to sign in', function (done) {
+	it('Should fail to sign in', function () {
 
 		signIn('test', '1234');
 
