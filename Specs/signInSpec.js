@@ -16,7 +16,7 @@
 		inputs.get(1).sendKeys(inputPassword);
 		signInButton.click();
 	}
-
+	
 	beforeEach(function() {
 
 		// for non-angular pages
