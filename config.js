@@ -1,4 +1,4 @@
-﻿var HtmlScreenshotReporter = require('protractor-jasmine2-html-reporter');
+var HtmlScreenshotReporter = require('protractor-jasmine2-html-reporter');
 
 var jasmineReporters = require('jasmine-reporters');
 
@@ -11,7 +11,7 @@ var  dashboardReportDirectory = reportsDirectory + '/dashboardReport';
 exports.config = {
   framework: 'jasmine',
   seleniumAddress: 'http://localhost:4444/wd/hub',
-  specs: ['Specs/*Spec.js'],
+  specs: ['homePage.js'],
 
   //baseUrl: 'file:///C:/Users/Lenovo/Desktop/Super%20Calculator.html',
 
