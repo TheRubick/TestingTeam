@@ -7,7 +7,7 @@ browser.driver.controlFlow().execute = function () {
 	queue 200ms wait
 	*/
 	origFn.call(browser.driver.controlFlow(), function () {
-		return protractor.promise.delayed(200);
+		return protractor.promise.delayed(300);
 	});
 
 	return origFn.apply(browser.driver.controlFlow(), args);
@@ -16,8 +16,11 @@ browser.driver.controlFlow().execute = function () {
 describe('Following:', function () {
 
 	var EC = protractor.ExpectedConditions;
-	
-	it('Sign in', function () {
+
+	/*
+	first, sign in
+	*/
+	it('Preparation', function () {
 
 		browser.get('http://localhost:4200/');
 
@@ -27,7 +30,9 @@ describe('Following:', function () {
 		inputs.get(0).sendKeys('mai');
 		inputs.get(1).sendKeys('mai');
 		signInButton.click();
-		browser.get('http://localhost:4200/following', 1000);
+		browser.get('http://localhost:4200/following');
+		browser.refresh(10 * 1000);
+		//expect(browser.wait(EC.presenceOf(element(by.id('searchtextfollowing'))), 10 * 1000)).toBeTruthy();
 	});
 
 	/*
@@ -37,16 +42,12 @@ describe('Following:', function () {
 	var searchButton = element(by.id('searchfollowingg'));
 	var listItems = element.all(by.tagName('li'));
 
-	beforeEach(function () {
-
-		searchTextBox.clear();
-	});
-
 	/*
 	searching function
 	*/
     function search(inputText) {
 
+		searchTextBox.clear();
 		searchTextBox.sendKeys(inputText);
 		searchButton.click();
 	}

@@ -1,58 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites disabled="0" errors="0" failures="1" tests="9" time="79.442">
- <testsuite name="Sign in:" timestamp="2019-03-24T05:02:19" hostname="localhost" time="41.307" errors="0" tests="4" skipped="0" disabled="0" failures="0">
-  <testcase classname="Sign in:" name="Should show incorrect credentials error" time="12.308" />
-  <testcase classname="Sign in:" name="Should show missing credentials error" time="9.824" />
-  <testcase classname="Sign in:" name="Should sign in successfuly" time="11.651" />
-  <testcase classname="Sign in:" name="Should log out successfully" time="7.522" />
+<testsuites disabled="0" errors="0" failures="0" tests="9" time="114.551">
+ <testsuite name="Sign in:" timestamp="2019-03-24T10:56:00" hostname="localhost" time="58.941" errors="0" tests="4" skipped="0" disabled="0" failures="0">
+  <testcase classname="Sign in:" name="Should show incorrect credentials error" time="17.88" />
+  <testcase classname="Sign in:" name="Should show missing credentials error" time="14.626" />
+  <testcase classname="Sign in:" name="Should sign in successfuly" time="16.511" />
+  <testcase classname="Sign in:" name="Should log out successfully" time="9.922" />
  </testsuite>
- <testsuite name="Following:" timestamp="2019-03-24T05:03:00" hostname="localhost" time="38.135" errors="0" tests="5" skipped="0" disabled="0" failures="1">
-  <testcase classname="Following:" name="Sign in" time="12.125">
-   <failure type="exception" message="Failed: No element found using locator: By(css selector, *[id=&quot;searchtextfollowing&quot;])"><![CDATA[NoSuchElementError: No element found using locator: By(css selector, *[id="searchtextfollowing"])
-    at elementArrayFinder.getWebElements.then (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\built\element.js:814:27)
-    at ManagedPromise.invokeCallback_ (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1376:14)
-    at TaskQueue.execute_ (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
-    at TaskQueue.executeNext_ (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
-    at asyncRun (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2927:27)
-    at C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7
-    at process._tickCallback (internal/process/next_tick.js:68:7)Error
-    at ElementArrayFinder.applyAction_ (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\built\element.js:459:27)
-    at ElementArrayFinder.(anonymous function).args [as clear] (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\built\element.js:91:29)
-    at ElementFinder.(anonymous function).args [as clear] (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\built\element.js:831:22)
-    at UserContext.<anonymous> (C:\Users\dell\Desktop\demo-test\Specs\followingSpec.js:42:17)
-    at C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:112:25
-    at new ManagedPromise (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1077:7)
-    at ControlFlow.promise (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2505:12)
-    at schedulerExecute (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
-    at TaskQueue.execute_ (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
-    at TaskQueue.executeNext_ (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
-From: Task: Run beforeEach in control flow
-    at ControlFlow.browser.driver.controlFlow.execute (C:\Users\dell\Desktop\demo-test\Specs\followingSpec.js:13:16)
-    at UserContext.<anonymous> (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:94:19)
-    at attempt (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
-    at QueueRunner.run (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
-    at QueueRunner.execute (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4199:10)
-    at Spec.queueRunnerFactory (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:909:35)
-    at Spec.execute (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:526:10)
-    at UserContext.fn (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:5340:37)
-    at attempt (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
-    at QueueRunner.run (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
-From asynchronous test: 
-Error
-    at Suite.<anonymous> (C:\Users\dell\Desktop\demo-test\Specs\followingSpec.js:40:2)
-    at addSpecsToSuite (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
-    at Env.describe (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
-    at describe (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
-    at Object.<anonymous> (C:\Users\dell\Desktop\demo-test\Specs\followingSpec.js:16:1)
-    at Module._compile (internal/modules/cjs/loader.js:689:30)
-    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
-    at Module.load (internal/modules/cjs/loader.js:599:32)
-    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)]]>
-   </failure>
-  </testcase>
-  <testcase classname="Following:" name="Should find 0 results for &quot;abc&quot;" time="6.867" />
-  <testcase classname="Following:" name="Should find 2 results for &quot;ahmed&quot;" time="6.318" />
-  <testcase classname="Following:" name="Should find 3 results for &quot;ha&quot;" time="6.394" />
-  <testcase classname="Following:" name="Should find 6 results for &quot; &quot;" time="6.43" />
+ <testsuite name="Following:" timestamp="2019-03-24T10:56:59" hostname="localhost" time="55.61" errors="0" tests="5" skipped="0" disabled="0" failures="0">
+  <testcase classname="Following:" name="Preparation" time="19.911" />
+  <testcase classname="Following:" name="Should find 0 results for &quot;abc&quot;" time="8.914" />
+  <testcase classname="Following:" name="Should find 2 results for &quot;ahmed&quot;" time="8.868" />
+  <testcase classname="Following:" name="Should find 3 results for &quot;ha&quot;" time="8.996" />
+  <testcase classname="Following:" name="Should find 6 results for &quot; &quot;" time="8.919" />
  </testsuite>
 </testsuites>

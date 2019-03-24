@@ -17,10 +17,12 @@ var ScreenshotAndStackReporter = new HtmlScreenshotReporter({
 });
 
 exports.config = {
-  directConnect: true,
+	directConnect: true,
 	specs: ['Specs/signInSpec.js', 'Specs/followingSpec.js'],
 	multiCapabilities: [{
 		'browserName': 'firefox'
+	}, {
+		'browserName': 'chrome'
 	}],
 
   beforeLaunch: function () {
