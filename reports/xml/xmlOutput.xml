@@ -1,68 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites disabled="0" errors="0" failures="4" tests="13" time="42.383">
- <testsuite name="Checking the Home page Functionalities" timestamp="2019-03-24T04:07:41" hostname="localhost" time="31.627" errors="0" tests="7" skipped="0" disabled="0" failures="0">
-  <testcase classname="Checking the Home page Functionalities" name="first step is to check the successful log in " time="6.555" />
-  <testcase classname="Checking the Home page Functionalities" name="Checking home page button" time="6.004" />
-  <testcase classname="Checking the Home page Functionalities" name="Checking website logo button" time="3.772" />
-  <testcase classname="Checking the Home page Functionalities" name="Checking the successful transfer from home page to the profile page " time="4.172" />
-  <testcase classname="Checking the Home page Functionalities" name="Checking the successful transfer from home page to the my books page" time="3.283" />
-  <testcase classname="Checking the Home page Functionalities" name="Checking the successful transfer from home page to the followers page" time="3.917" />
-  <testcase classname="Checking the Home page Functionalities" name="Checking the successful transfer from home page to the following page" time="3.921" />
+<testsuites disabled="0" errors="0" failures="1" tests="9" time="79.442">
+ <testsuite name="Sign in:" timestamp="2019-03-24T05:02:19" hostname="localhost" time="41.307" errors="0" tests="4" skipped="0" disabled="0" failures="0">
+  <testcase classname="Sign in:" name="Should show incorrect credentials error" time="12.308" />
+  <testcase classname="Sign in:" name="Should show missing credentials error" time="9.824" />
+  <testcase classname="Sign in:" name="Should sign in successfuly" time="11.651" />
+  <testcase classname="Sign in:" name="Should log out successfully" time="7.522" />
  </testsuite>
- <testsuite name="Checking the Home page Functionalities" timestamp="2019-03-24T04:08:13" hostname="localhost" time="10.756" errors="0" tests="6" skipped="0" disabled="0" failures="4">
-  <testcase classname="Checking the Home page Functionalities" name="redirect to profile" time="2.148" />
-  <testcase classname="Checking the Home page Functionalities" name="Checking the profile name in the details section" time="5.069">
-   <failure type="toEqual" message="Expected &apos;Mai mostafa ( edit profile )&apos; to equal &apos;mai ( edit profile )&apos;."><![CDATA[Error: Failed expectation
-    at UserContext.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\profilePageSpec.js:49:38)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:112:25
-    at new ManagedPromise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1077:7)
-    at ControlFlow.promise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2505:12)
-    at schedulerExecute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
-    at TaskQueue.execute_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
-    at TaskQueue.executeNext_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
-    at asyncRun (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2974:25)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7]]>
+ <testsuite name="Following:" timestamp="2019-03-24T05:03:00" hostname="localhost" time="38.135" errors="0" tests="5" skipped="0" disabled="0" failures="1">
+  <testcase classname="Following:" name="Sign in" time="12.125">
+   <failure type="exception" message="Failed: No element found using locator: By(css selector, *[id=&quot;searchtextfollowing&quot;])"><![CDATA[NoSuchElementError: No element found using locator: By(css selector, *[id="searchtextfollowing"])
+    at elementArrayFinder.getWebElements.then (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\built\element.js:814:27)
+    at ManagedPromise.invokeCallback_ (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1376:14)
+    at TaskQueue.execute_ (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+    at asyncRun (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2927:27)
+    at C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7
+    at process._tickCallback (internal/process/next_tick.js:68:7)Error
+    at ElementArrayFinder.applyAction_ (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\built\element.js:459:27)
+    at ElementArrayFinder.(anonymous function).args [as clear] (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\built\element.js:91:29)
+    at ElementFinder.(anonymous function).args [as clear] (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\built\element.js:831:22)
+    at UserContext.<anonymous> (C:\Users\dell\Desktop\demo-test\Specs\followingSpec.js:42:17)
+    at C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:112:25
+    at new ManagedPromise (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1077:7)
+    at ControlFlow.promise (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2505:12)
+    at schedulerExecute (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
+    at TaskQueue.execute_ (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
+    at TaskQueue.executeNext_ (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
+From: Task: Run beforeEach in control flow
+    at ControlFlow.browser.driver.controlFlow.execute (C:\Users\dell\Desktop\demo-test\Specs\followingSpec.js:13:16)
+    at UserContext.<anonymous> (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:94:19)
+    at attempt (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+    at QueueRunner.execute (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4199:10)
+    at Spec.queueRunnerFactory (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:909:35)
+    at Spec.execute (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:526:10)
+    at UserContext.fn (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:5340:37)
+    at attempt (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
+    at QueueRunner.run (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
+From asynchronous test: 
+Error
+    at Suite.<anonymous> (C:\Users\dell\Desktop\demo-test\Specs\followingSpec.js:40:2)
+    at addSpecsToSuite (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
+    at Env.describe (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
+    at describe (C:\Users\dell\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
+    at Object.<anonymous> (C:\Users\dell\Desktop\demo-test\Specs\followingSpec.js:16:1)
+    at Module._compile (internal/modules/cjs/loader.js:689:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
+    at Module.load (internal/modules/cjs/loader.js:599:32)
+    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)]]>
    </failure>
   </testcase>
-  <testcase classname="Checking the Home page Functionalities" name="Checking the profile name in the book shelf section" time="0.328">
-   <failure type="toEqual" message="Expected &apos;Mai mostafa&apos;S BOOKSHELVES&apos; to equal &apos;mai&apos;S BOOKSHELVES &apos;."><![CDATA[Error: Failed expectation
-    at UserContext.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\profilePageSpec.js:61:50)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:112:25
-    at new ManagedPromise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1077:7)
-    at ControlFlow.promise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2505:12)
-    at schedulerExecute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
-    at TaskQueue.execute_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
-    at TaskQueue.executeNext_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
-    at asyncRun (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2927:27)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7]]>
-   </failure>
-  </testcase>
-  <testcase classname="Checking the Home page Functionalities" name="Checking the profile name in the currently reading section" time="0.26">
-   <failure type="toEqual" message="Expected &apos;Mai mostafa IS CURRENTLY READING&apos; to equal &apos;mai IS CURRENTLY READING &apos;."><![CDATA[Error: Failed expectation
-    at UserContext.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\profilePageSpec.js:73:50)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:112:25
-    at new ManagedPromise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1077:7)
-    at ControlFlow.promise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2505:12)
-    at schedulerExecute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
-    at TaskQueue.execute_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
-    at TaskQueue.executeNext_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
-    at asyncRun (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2927:27)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7]]>
-   </failure>
-  </testcase>
-  <testcase classname="Checking the Home page Functionalities" name="Checking the profile name in the recent updates section" time="0.342">
-   <failure type="toEqual" message="Expected &apos;Mai mostafa&apos;S RECENT UPDATES&apos; to equal &apos;mai&apos;S RECENT UPDATES &apos;."><![CDATA[Error: Failed expectation
-    at UserContext.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\profilePageSpec.js:85:50)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:112:25
-    at new ManagedPromise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1077:7)
-    at ControlFlow.promise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2505:12)
-    at schedulerExecute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
-    at TaskQueue.execute_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
-    at TaskQueue.executeNext_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
-    at asyncRun (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2927:27)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7]]>
-   </failure>
-  </testcase>
-  <testcase classname="Checking the Home page Functionalities" name="Should be directed to myBooks page" time="2.607" />
+  <testcase classname="Following:" name="Should find 0 results for &quot;abc&quot;" time="6.867" />
+  <testcase classname="Following:" name="Should find 2 results for &quot;ahmed&quot;" time="6.318" />
+  <testcase classname="Following:" name="Should find 3 results for &quot;ha&quot;" time="6.394" />
+  <testcase classname="Following:" name="Should find 6 results for &quot; &quot;" time="6.43" />
  </testsuite>
 </testsuites>

@@ -1,28 +1,24 @@
+﻿var origFn = browser.driver.controlFlow().execute;
 
-  var origFn = browser.driver.controlFlow().execute;
+browser.driver.controlFlow().execute = function () {
+	var args = arguments;
 
-  browser.driver.controlFlow().execute = function() {
-  var args = arguments;
+	/*
+	queue 200ms wait
+	*/
+	origFn.call(browser.driver.controlFlow(), function () {
+		return protractor.promise.delayed(200);
+	});
 
-  // queue 100ms wait
-  origFn.call(browser.driver.controlFlow(), function() {
-    return protractor.promise.delayed(100);
-  });
-
-  return origFn.apply(browser.driver.controlFlow(), args);
+	return origFn.apply(browser.driver.controlFlow(), args);
 };
 
-
-describe('Followers:', function () {
+describe('Following:', function () {
 
 	var EC = protractor.ExpectedConditions;
-
-
+	
 	it('Sign in', function () {
 
-		/*
-		first, sign in
-		*/
 		browser.get('http://localhost:4200/');
 
 		var inputs = element(by.className('row')).all(by.tagName('input'));
@@ -31,64 +27,55 @@ describe('Followers:', function () {
 		inputs.get(0).sendKeys('mai');
 		inputs.get(1).sendKeys('mai');
 		signInButton.click();
-
+		browser.get('http://localhost:4200/following', 1000);
 	});
 
+	/*
+	locate required elements for search
+	*/
+	var searchTextBox = element(by.id('searchtextfollowing'));
+	var searchButton = element(by.id('searchfollowingg'));
+	var listItems = element.all(by.tagName('li'));
 
+	beforeEach(function () {
+
+		searchTextBox.clear();
+	});
 
 	/*
 	searching function
-
+	*/
     function search(inputText) {
 
-		/*
-		locate required elements for search
-		*/
-		//var searchTextBox = ;
-		//var searchButton = ;
-
-		/*
-		element(by.id('searchtextfollowing')).sendKeys(inputText);
-		element(by.id('searchfollowingg')).click();
-
-
+		searchTextBox.sendKeys(inputText);
+		searchButton.click();
 	}
-*/
 
+	it('Should find 0 results for "abc"', function () {
 
-    beforeEach(function() {
-
-		// for non-angular pages
-        // browser.ignoreSynchronization = true;
-
-				browser.get('http://localhost:4200/following');
-	});
-
-	it('Should find 0 results', function () {
-
-	element(by.id('searchtextfollowing')).sendKeys('abc');
-		element(by.id('searchfollowingg')).click();
-
-		var listItems = element.all(by.css('list-group list-group-dividered list-group-full li'));
+		search('abc');
 
 		expect(listItems.count()).toEqual(0);
 	});
 
+	it('Should find 2 results for "ahmed"', function () {
 
-	it('Should find 2 results', function () {
+		search('ahmed');
 
-		element(by.id('searchtextfollowing')).sendKeys('ahmed');
-		element(by.id('searchfollowingg')).click();
-		var listItems = element.all(by.tagName('li'));
 		expect(listItems.count()).toEqual(2);
 	});
 
-	it('Should find 3 results', function () {
+	it('Should find 3 results for "ha"', function () {
 
-		element(by.id('searchtextfollowing')).sendKeys('ha');
-		element(by.id('searchfollowingg')).click();
-		var listItems = element.all(by.tagName('li'));
+		search('ha');
+
 		expect(listItems.count()).toEqual(3);
 	});
 
+	it('Should find 6 results for " "', function () {
+
+		search(' ');
+
+		expect(listItems.count()).toEqual(6);
+	});
 });
