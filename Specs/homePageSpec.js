@@ -3,19 +3,6 @@
   test scripts for testing the home page functionailites
   */
 
-  var origFn = browser.driver.controlFlow().execute;
-
-browser.driver.controlFlow().execute = function() {
-  var args = arguments;
-
-  // queue 100ms wait
-  origFn.call(browser.driver.controlFlow(), function() {
-    return protractor.promise.delayed(100);
-  });
-
-  return origFn.apply(browser.driver.controlFlow(), args);
-};
-
 describe('Checking the Home page Functionalities', function ()  {
 
   /*
@@ -80,18 +67,6 @@ describe('Checking the Home page Functionalities', function ()  {
     expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/home');
 
   });
-
-  /*
-  this function will redirect the browser to the home page after executing each test case
-
-  beforeEach(function(){
-
-    browser.get('http://localhost:4200/home');
-
-  });
-  */
-
-
 
   /*
   check the successful action of clicking on the profile button in the upper navigation bar

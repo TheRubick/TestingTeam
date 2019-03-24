@@ -10,16 +10,18 @@ exports.config = {
   framework: 'jasmine',
   seleniumAddress: 'http://localhost:4444/wd/hub',
   specs: ['Specs/homePageSpec.js','Specs/profilePageSpec.js'],
-  capabilities: {
-   browserName: 'firefox'
- },
+  multiCapabilities: [
+    {'browserName': 'chrome'},
+    {'browserName': 'firefox'},
+  ],
 
 
 
 onPrepare: function () {
 
-        // xml report generated for dashboard
-
+        /*
+		xml report generated for dashboard
+		*/
         jasmine.getEnv().addReporter(new jasmineReporters.JUnitXmlReporter({
 
             consolidateAll: true,

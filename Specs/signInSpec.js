@@ -2,49 +2,57 @@
 
 	var EC = protractor.ExpectedConditions;
 
-	// locate required elements
+	/*
+	locate required elements
+	*/
 	var inputs = element(by.className('row')).all(by.tagName('input'));
-	var signInButton = element(by.partialButtonText('Sign in'));
+	var signInButton = element(by.id('signInButton'));
+	var logOutButton = element(by.id('logOut'));
 
-	// locate updates header in home page
+	/*
+	locate updates header in home page
+	*/
 	var updatesHeader = element(by.id('updates'));
 
-    function signIn(inputUsername, inputPassword) {
+	/*
+	a function to do the signing in process
+	*/
+	function signIn(inputUsername, inputPassword) {
 
 		inputs.get(0).sendKeys(inputUsername);
 		inputs.get(1).sendKeys(inputPassword);
 		signInButton.click();
-    }
+	}
+	
+	beforeEach(function() {
 
+		/*
+		for non-angular pages
 
-    beforeEach(function() {
-
-		// for non-angular pages
-        // browser.ignoreSynchronization = true;
+		browser.ignoreSynchronization = true;
+		*/
 
 		browser.get('http://localhost:4200/');
 	});
 
-
-	afterEach(function () {
-
-		var logOutButton = element(by.partialButtonText('Log out'));
-
-		logOutButton.click();
-	});
-
 	it('Should sign in successfuly', function () {
 
-        signIn('test', 'test');
+		signIn('mai', 'mai');
 
 		expect(updatesHeader.getText()).toEqual('Updates');
-    });
+	});
+
+	it('Should log out successfully', function () {
+
+		logOutButton.click();
+
+		expect(browser.wait(EC.presenceOf(signInButton), 5 * 1000)).toBeTruthy();
+	});
 
 	it('Should fail to sign in', function () {
 
-		signIn('test', '1234');
+		signIn('mai', '123');
 
-		expect(browser.wait(EC.stalenessOf(updatesHeader), 5*1000)).toBeTruthy();
-    });
-
+		expect(browser.wait(EC.stalenessOf(updatesHeader), 5 * 1000)).toBeTruthy();
+	});
 });
