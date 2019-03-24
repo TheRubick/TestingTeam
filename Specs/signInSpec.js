@@ -37,7 +37,7 @@
 
 	it('Should sign in successfuly', function () {
 
-		signIn('test', 'test');
+		signIn('mai', 'mai');
 
 		expect(updatesHeader.getText()).toEqual('Updates');
 	});
@@ -51,7 +51,7 @@
 
 	it('Should fail to sign in', function () {
 
-		signIn('test', '1234');
+		signIn('mai', '123');
 
 		expect(browser.wait(EC.stalenessOf(updatesHeader), 5 * 1000)).toBeTruthy();
 	});
