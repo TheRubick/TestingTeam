@@ -1,4 +1,20 @@
 'use strict'
+  /*
+  test scripts for testing the home page functionailites
+  */
+
+  var origFn = browser.driver.controlFlow().execute;
+
+browser.driver.controlFlow().execute = function() {
+  var args = arguments;
+
+  // queue 100ms wait
+  origFn.call(browser.driver.controlFlow(), function() {
+    return protractor.promise.delayed(100);
+  });
+
+  return origFn.apply(browser.driver.controlFlow(), args);
+};
 
 describe('Checking the Home page Functionalities', function ()  {
 
@@ -15,8 +31,8 @@ describe('Checking the Home page Functionalities', function ()  {
   /*
     some defualt variables for the user's name and password
   */
-  var userNameVar = "test";
-  var userPasswordVar = "test";
+  var userNameVar = "mai";
+  var userPasswordVar = "mai";
 
   /*
   first step is to login
@@ -45,6 +61,15 @@ describe('Checking the Home page Functionalities', function ()  {
   });
 
 
+  /*
+  check the successful action of clicking on the home button in the upper navigation bar
+  */
+  it("Checking home page button",function(){
+
+    homePageButton.click();
+    expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/home');
+
+  });
 
   /*
   check the successful action of clicking on the logo of the website in the upper navigation bar
@@ -58,22 +83,15 @@ describe('Checking the Home page Functionalities', function ()  {
 
   /*
   this function will redirect the browser to the home page after executing each test case
-  */
+
   beforeEach(function(){
 
     browser.get('http://localhost:4200/home');
 
   });
-
-  /*
-  check the successful action of clicking on the home button in the upper navigation bar
   */
-  it("Checking home page button",function(){
 
-    homePageButton.click();
-    expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/home');
 
-  });
 
   /*
   check the successful action of clicking on the profile button in the upper navigation bar
@@ -110,6 +128,11 @@ describe('Checking the Home page Functionalities', function ()  {
   */
   it("Checking the successful transfer from home page to the following page",function(){
 
+    /*
+    redirect the browser to return to the home page
+
+    browser.get('http://localhost:4200/home');
+    */
     followingPageButton.click();
     expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/following');
 

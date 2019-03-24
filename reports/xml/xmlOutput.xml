@@ -1,264 +1,68 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites disabled="0" errors="0" failures="6" tests="7" time="18.995">
- <testsuite name="Checking the Home page Functionalities" timestamp="2019-03-23T18:39:17" hostname="localhost" time="18.995" errors="0" tests="7" skipped="0" disabled="0" failures="6">
-  <testcase classname="Checking the Home page Functionalities" name="first step is to check the successful log in " time="8.856" />
-  <testcase classname="Checking the Home page Functionalities" name="Checking website logo button" time="1.329">
-   <failure type="exception" message="Failed: No element found using locator: By(css selector, *[id=&quot;Readholic&quot;])"><![CDATA[NoSuchElementError: No element found using locator: By(css selector, *[id="Readholic"])
-    at elementArrayFinder.getWebElements.then (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\element.js:814:27)
-    at ManagedPromise.invokeCallback_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1376:14)
-    at TaskQueue.execute_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
-    at TaskQueue.executeNext_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
-    at asyncRun (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2927:27)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7
-    at process._tickCallback (internal/process/next_tick.js:68:7)Error
-    at ElementArrayFinder.applyAction_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\element.js:459:27)
-    at ElementArrayFinder.(anonymous function).args [as click] (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\element.js:91:29)
-    at ElementFinder.(anonymous function).args [as click] (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\element.js:831:22)
-    at UserContext.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\homePageSpec.js:54:16)
+<testsuites disabled="0" errors="0" failures="4" tests="13" time="40.275">
+ <testsuite name="Checking the Home page Functionalities" timestamp="2019-03-24T02:37:57" hostname="localhost" time="27.523" errors="0" tests="7" skipped="0" disabled="0" failures="0">
+  <testcase classname="Checking the Home page Functionalities" name="first step is to check the successful log in " time="6.326" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking home page button" time="3.669" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking website logo button" time="3.344" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the successful transfer from home page to the profile page " time="4.155" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the successful transfer from home page to the my books page" time="2.662" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the successful transfer from home page to the followers page" time="3.569" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the successful transfer from home page to the following page" time="3.797" />
+ </testsuite>
+ <testsuite name="Checking the Home page Functionalities" timestamp="2019-03-24T02:38:24" hostname="localhost" time="12.752" errors="0" tests="6" skipped="0" disabled="0" failures="4">
+  <testcase classname="Checking the Home page Functionalities" name="redirect to profile" time="1.928" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the profile name in the details section" time="4.035">
+   <failure type="toEqual" message="Expected &apos;Mai mostafa ( edit profile )&apos; to equal &apos;mai ( edit profile )&apos;."><![CDATA[Error: Failed expectation
+    at UserContext.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\profilePageSpec.js:49:38)
     at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:112:25
     at new ManagedPromise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1077:7)
     at ControlFlow.promise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2505:12)
     at schedulerExecute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
     at TaskQueue.execute_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
     at TaskQueue.executeNext_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
-From: Task: Run it("Checking website logo button") in control flow
-    at UserContext.<anonymous> (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:94:19)
-    at attempt (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
-    at QueueRunner.run (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
-    at runNext (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4257:20)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4264:13
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4172:9
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:64:48
-    at ControlFlow.emit (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\events.js:62:21)
-    at ControlFlow.shutdown_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2674:10)
-    at shutdownTask_.MicroTask (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2599:53)
-From asynchronous test: 
-Error
-    at Suite.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\homePageSpec.js:52:3)
-    at addSpecsToSuite (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
-    at Env.describe (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
-    at describe (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
-    at Object.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\homePageSpec.js:3:1)
-    at Module._compile (internal/modules/cjs/loader.js:689:30)
-    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
-    at Module.load (internal/modules/cjs/loader.js:599:32)
-    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)]]>
+    at asyncRun (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2927:27)
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7]]>
    </failure>
   </testcase>
-  <testcase classname="Checking the Home page Functionalities" name="Checking home page button" time="1.531">
-   <failure type="exception" message="Failed: No element found using locator: By(css selector, *[id=&quot;home&quot;])"><![CDATA[NoSuchElementError: No element found using locator: By(css selector, *[id="home"])
-    at elementArrayFinder.getWebElements.then (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\element.js:814:27)
-    at ManagedPromise.invokeCallback_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1376:14)
-    at TaskQueue.execute_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
-    at TaskQueue.executeNext_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
-    at asyncRun (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2927:27)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7
-    at process._tickCallback (internal/process/next_tick.js:68:7)Error
-    at ElementArrayFinder.applyAction_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\element.js:459:27)
-    at ElementArrayFinder.(anonymous function).args [as click] (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\element.js:91:29)
-    at ElementFinder.(anonymous function).args [as click] (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\element.js:831:22)
-    at UserContext.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\homePageSpec.js:73:20)
+  <testcase classname="Checking the Home page Functionalities" name="Checking the profile name in the book shelf section" time="1.367">
+   <failure type="toEqual" message="Expected &apos;Mai mostafa&apos;S BOOKSHELVES&apos; to equal &apos;mai&apos;S BOOKSHELVES &apos;."><![CDATA[Error: Failed expectation
+    at UserContext.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\profilePageSpec.js:61:50)
     at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:112:25
     at new ManagedPromise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1077:7)
     at ControlFlow.promise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2505:12)
     at schedulerExecute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
     at TaskQueue.execute_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
     at TaskQueue.executeNext_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
-From: Task: Run it("Checking home page button") in control flow
-    at UserContext.<anonymous> (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:94:19)
-    at attempt (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
-    at QueueRunner.run (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
-    at runNext (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4257:20)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4264:13
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4172:9
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:64:48
-    at ControlFlow.emit (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\events.js:62:21)
-    at ControlFlow.shutdown_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2674:10)
-    at shutdownTask_.MicroTask (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2599:53)
-From asynchronous test: 
-Error
-    at Suite.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\homePageSpec.js:71:3)
-    at addSpecsToSuite (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
-    at Env.describe (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
-    at describe (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
-    at Object.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\homePageSpec.js:3:1)
-    at Module._compile (internal/modules/cjs/loader.js:689:30)
-    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
-    at Module.load (internal/modules/cjs/loader.js:599:32)
-    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)]]>
+    at asyncRun (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2927:27)
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7]]>
    </failure>
   </testcase>
-  <testcase classname="Checking the Home page Functionalities" name="Checking the successful transfer from home page to the profile page " time="2.064">
-   <failure type="exception" message="Failed: No element found using locator: By(css selector, *[id=&quot;profile&quot;])"><![CDATA[NoSuchElementError: No element found using locator: By(css selector, *[id="profile"])
-    at elementArrayFinder.getWebElements.then (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\element.js:814:27)
-    at ManagedPromise.invokeCallback_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1376:14)
-    at TaskQueue.execute_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
-    at TaskQueue.executeNext_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
-    at asyncRun (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2927:27)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7
-    at process._tickCallback (internal/process/next_tick.js:68:7)Error
-    at ElementArrayFinder.applyAction_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\element.js:459:27)
-    at ElementArrayFinder.(anonymous function).args [as click] (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\element.js:91:29)
-    at ElementFinder.(anonymous function).args [as click] (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\element.js:831:22)
-    at UserContext.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\homePageSpec.js:83:23)
+  <testcase classname="Checking the Home page Functionalities" name="Checking the profile name in the currently reading section" time="1.335">
+   <failure type="toEqual" message="Expected &apos;Mai mostafa IS CURRENTLY READING&apos; to equal &apos;mai IS CURRENTLY READING &apos;."><![CDATA[Error: Failed expectation
+    at UserContext.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\profilePageSpec.js:73:50)
     at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:112:25
     at new ManagedPromise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1077:7)
     at ControlFlow.promise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2505:12)
     at schedulerExecute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
     at TaskQueue.execute_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
     at TaskQueue.executeNext_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
-From: Task: Run it("Checking the successful transfer from home page to the profile page ") in control flow
-    at UserContext.<anonymous> (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:94:19)
-    at attempt (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
-    at QueueRunner.run (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
-    at runNext (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4257:20)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4264:13
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4172:9
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:64:48
-    at ControlFlow.emit (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\events.js:62:21)
-    at ControlFlow.shutdown_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2674:10)
-    at shutdownTask_.MicroTask (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2599:53)
-From asynchronous test: 
-Error
-    at Suite.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\homePageSpec.js:81:3)
-    at addSpecsToSuite (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
-    at Env.describe (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
-    at describe (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
-    at Object.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\homePageSpec.js:3:1)
-    at Module._compile (internal/modules/cjs/loader.js:689:30)
-    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
-    at Module.load (internal/modules/cjs/loader.js:599:32)
-    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)]]>
+    at asyncRun (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2927:27)
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7]]>
    </failure>
   </testcase>
-  <testcase classname="Checking the Home page Functionalities" name="Checking the successful transfer from home page to the my books page" time="1.579">
-   <failure type="exception" message="Failed: No element found using locator: By(css selector, *[id=&quot;myBooks&quot;])"><![CDATA[NoSuchElementError: No element found using locator: By(css selector, *[id="myBooks"])
-    at elementArrayFinder.getWebElements.then (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\element.js:814:27)
-    at ManagedPromise.invokeCallback_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1376:14)
-    at TaskQueue.execute_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
-    at TaskQueue.executeNext_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
-    at asyncRun (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2927:27)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7
-    at process._tickCallback (internal/process/next_tick.js:68:7)Error
-    at ElementArrayFinder.applyAction_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\element.js:459:27)
-    at ElementArrayFinder.(anonymous function).args [as click] (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\element.js:91:29)
-    at ElementFinder.(anonymous function).args [as click] (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\element.js:831:22)
-    at UserContext.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\homePageSpec.js:93:23)
+  <testcase classname="Checking the Home page Functionalities" name="Checking the profile name in the recent updates section" time="1.339">
+   <failure type="toEqual" message="Expected &apos;Mai mostafa&apos;S RECENT UPDATES&apos; to equal &apos;mai&apos;S RECENT UPDATES &apos;."><![CDATA[Error: Failed expectation
+    at UserContext.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\profilePageSpec.js:85:50)
     at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:112:25
     at new ManagedPromise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1077:7)
     at ControlFlow.promise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2505:12)
     at schedulerExecute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
     at TaskQueue.execute_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
     at TaskQueue.executeNext_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
-From: Task: Run it("Checking the successful transfer from home page to the my books page") in control flow
-    at UserContext.<anonymous> (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:94:19)
-    at attempt (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
-    at QueueRunner.run (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
-    at runNext (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4257:20)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4264:13
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4172:9
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:64:48
-    at ControlFlow.emit (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\events.js:62:21)
-    at ControlFlow.shutdown_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2674:10)
-    at shutdownTask_.MicroTask (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2599:53)
-From asynchronous test: 
-Error
-    at Suite.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\homePageSpec.js:91:3)
-    at addSpecsToSuite (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
-    at Env.describe (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
-    at describe (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
-    at Object.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\homePageSpec.js:3:1)
-    at Module._compile (internal/modules/cjs/loader.js:689:30)
-    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
-    at Module.load (internal/modules/cjs/loader.js:599:32)
-    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)]]>
-   </failure>
-  </testcase>
-  <testcase classname="Checking the Home page Functionalities" name="Checking the successful transfer from home page to the followers page" time="1.28">
-   <failure type="exception" message="Failed: No element found using locator: By(css selector, *[id=&quot;followers&quot;])"><![CDATA[NoSuchElementError: No element found using locator: By(css selector, *[id="followers"])
-    at elementArrayFinder.getWebElements.then (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\element.js:814:27)
-    at ManagedPromise.invokeCallback_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1376:14)
-    at TaskQueue.execute_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
-    at TaskQueue.executeNext_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
     at asyncRun (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2927:27)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7
-    at process._tickCallback (internal/process/next_tick.js:68:7)Error
-    at ElementArrayFinder.applyAction_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\element.js:459:27)
-    at ElementArrayFinder.(anonymous function).args [as click] (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\element.js:91:29)
-    at ElementFinder.(anonymous function).args [as click] (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\element.js:831:22)
-    at UserContext.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\homePageSpec.js:103:25)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:112:25
-    at new ManagedPromise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1077:7)
-    at ControlFlow.promise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2505:12)
-    at schedulerExecute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
-    at TaskQueue.execute_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
-    at TaskQueue.executeNext_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
-From: Task: Run it("Checking the successful transfer from home page to the followers page") in control flow
-    at UserContext.<anonymous> (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:94:19)
-    at attempt (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
-    at QueueRunner.run (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
-    at runNext (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4257:20)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4264:13
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4172:9
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:64:48
-    at ControlFlow.emit (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\events.js:62:21)
-    at ControlFlow.shutdown_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2674:10)
-    at shutdownTask_.MicroTask (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2599:53)
-From asynchronous test: 
-Error
-    at Suite.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\homePageSpec.js:101:3)
-    at addSpecsToSuite (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
-    at Env.describe (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
-    at describe (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
-    at Object.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\homePageSpec.js:3:1)
-    at Module._compile (internal/modules/cjs/loader.js:689:30)
-    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
-    at Module.load (internal/modules/cjs/loader.js:599:32)
-    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)]]>
+    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7]]>
    </failure>
   </testcase>
-  <testcase classname="Checking the Home page Functionalities" name="Checking the successful transfer from home page to the following page" time="2.354">
-   <failure type="exception" message="Failed: No element found using locator: By(css selector, *[id=&quot;following&quot;])"><![CDATA[NoSuchElementError: No element found using locator: By(css selector, *[id="following"])
-    at elementArrayFinder.getWebElements.then (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\element.js:814:27)
-    at ManagedPromise.invokeCallback_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1376:14)
-    at TaskQueue.execute_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
-    at TaskQueue.executeNext_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
-    at asyncRun (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2927:27)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7
-    at process._tickCallback (internal/process/next_tick.js:68:7)Error
-    at ElementArrayFinder.applyAction_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\element.js:459:27)
-    at ElementArrayFinder.(anonymous function).args [as click] (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\element.js:91:29)
-    at ElementFinder.(anonymous function).args [as click] (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\built\element.js:831:22)
-    at UserContext.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\homePageSpec.js:113:25)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:112:25
-    at new ManagedPromise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1077:7)
-    at ControlFlow.promise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2505:12)
-    at schedulerExecute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
-    at TaskQueue.execute_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
-    at TaskQueue.executeNext_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
-From: Task: Run it("Checking the successful transfer from home page to the following page") in control flow
-    at UserContext.<anonymous> (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:94:19)
-    at attempt (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4297:26)
-    at QueueRunner.run (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4217:20)
-    at runNext (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4257:20)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4264:13
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4172:9
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:64:48
-    at ControlFlow.emit (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\events.js:62:21)
-    at ControlFlow.shutdown_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2674:10)
-    at shutdownTask_.MicroTask (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2599:53)
-From asynchronous test: 
-Error
-    at Suite.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\homePageSpec.js:111:3)
-    at addSpecsToSuite (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1107:25)
-    at Env.describe (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:1074:7)
-    at describe (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasmine-core\lib\jasmine-core\jasmine.js:4399:18)
-    at Object.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\homePageSpec.js:3:1)
-    at Module._compile (internal/modules/cjs/loader.js:689:30)
-    at Object.Module._extensions..js (internal/modules/cjs/loader.js:700:10)
-    at Module.load (internal/modules/cjs/loader.js:599:32)
-    at tryModuleLoad (internal/modules/cjs/loader.js:538:12)]]>
-   </failure>
-  </testcase>
+  <testcase classname="Checking the Home page Functionalities" name="Should be directed to myBooks page" time="2.748" />
  </testsuite>
 </testsuites>

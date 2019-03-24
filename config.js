@@ -9,7 +9,11 @@ var  dashboardReportDirectory = reportsDirectory + '/dashboardReport';
 exports.config = {
   framework: 'jasmine',
   seleniumAddress: 'http://localhost:4444/wd/hub',
-  specs: ['Specs/homePageSpec.js'],
+  specs: ['Specs/homePageSpec.js','Specs/profilePageSpec.js'],
+  capabilities: {
+   browserName: 'firefox'
+ },
+
 
 
 onPrepare: function () {
