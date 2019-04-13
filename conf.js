@@ -17,8 +17,8 @@ var ScreenshotAndStackReporter = new HtmlScreenshotReporter({
 });
 
 exports.config = {
-	directConnect: true,
-	specs: ['Specs/signInSpec.js', 'Specs/followingSpec.js'],
+  directConnect: true,
+	specs: ['Specs/signInSpec.js', 'Specs/signUpSpec.js', 'Specs/followingSearchSpec.js', 'Specs/followingSpec.js'],
 	multiCapabilities: [{
 		'browserName': 'firefox'
 	}, {

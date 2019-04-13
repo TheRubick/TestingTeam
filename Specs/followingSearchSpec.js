@@ -44,22 +44,41 @@ describe('Following:', function () {
 		//expect(browser.wait(EC.presenceOf(element(by.id('searchtextfollowing'))), 10 * 1000)).toBeTruthy();
 	});
 
-	it('Should unfollow first person', function () {
+	/*
+	searching function
+	*/
+    function search(inputText) {
 
-		listItems.get(0).all(by.id('stopfollow')).click();
+		searchTextBox.clear();
+		searchTextBox.sendKeys(inputText);
+		searchButton.click();
+	}
 
-		expect(listItems.count()).toEqual(max - 1);
+	it('Should find 0 results for "abc"', function () {
+
+		search('abc');
+
+		expect(listItems.count()).toEqual(0);
 	});
 
-	it('Should switch status of first person in followers', function () {
+	it('Should find 2 results for "ahmed"', function () {
 
-		browser.get('http://localhost:4200/followers');
+		search('ahmed');
 
-		var button = listItems.get(0).all(by.partialButtonText('follow'));
-		var beforeText = button.getText();
-		button.click();
-		browser.sleep(10 * 1000);
+		expect(listItems.count()).toEqual(2);
+	});
 
-		expect(button.getText()).not.toEqual(beforeText);
-	}
+	it('Should find 3 results for "ha"', function () {
+
+		search('ha');
+
+		expect(listItems.count()).toEqual(3);
+	});
+
+	it('Should find 6 results for " "', function () {
+
+		search(' ');
+
+		expect(listItems.count()).toEqual(6);
+	});
 });
