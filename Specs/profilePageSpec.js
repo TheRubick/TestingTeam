@@ -1,4 +1,21 @@
 'use strict'
+
+/*
+Making delay
+*/
+var origFn = browser.driver.controlFlow().execute;
+
+browser.driver.controlFlow().execute = function() {
+var args = arguments;
+
+// queue 100ms wait
+origFn.call(browser.driver.controlFlow(), function() {
+  return protractor.promise.delayed(500);
+});
+
+return origFn.apply(browser.driver.controlFlow(), args);
+};
+
 /*
 test scripts for testing the home page functionailites
 */
@@ -14,8 +31,8 @@ describe('Checking the Home page Functionalities', function ()  {
   /*
     some defualt variables for the user's name and password
   */
-  var userNameVar = "mai";
-  var userPasswordVar = "mai";
+  var userNameVar = "test@yahoo.com";
+  var userPasswordVar = "password";
 
 
   /*
