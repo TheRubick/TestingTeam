@@ -1,82 +1,112 @@
-﻿var origFn = browser.driver.controlFlow().execute;
+﻿
+describe('Followers page', function() {
+	
+		var EC = protractor.ExpectedConditions;
+		
+		/*
+		locate required elements for search
+		*/
+		var searchTextBox = element(by.id('searchtextfollowing'));
+		var searchButton = element(by.id('searchfollowingg'));
+		var listItems = element.all(by.tagName('li'));
+		var max;
+	
+		/*
+		sign in elements
+		*/
+		signInInputs = element(by.className('row')).all(by.tagName('input'));
+		signInButton = element(by.id('signInButton'));
 
-browser.driver.controlFlow().execute = function () {
-	var args = arguments;
+		/*
+		input values to be used
+		*/
+		var varEmail = "ta7a@yahoo.com";
+		var varPassword = "password";	
 
-	/*
-	queue 200ms wait
-	*/
-	origFn.call(browser.driver.controlFlow(), function () {
-		return protractor.promise.delayed(300);
-	});
+		/*
+		a function to do the signing in process
+		default values are for successful sign in
+		*/
+		function signIn(inputEmail = varEmail, inputPassword = varPassword) {
+		
+				signInInputs.get(0).sendKeys(inputEmail);
+				signInInputs.get(1).sendKeys(inputPassword);
+			
+				signInButton.click();
+				browser.waitForAngular();
+				browser.sleep(500);
+		}
+	
+		beforeAll(function () {
+		
+				browser.get('http://localhost:4200/');
+				browser.waitForAngular();
+				browser.sleep(500);
+					
+				var inputs = element.all(by.className('row')).get(0).all(by.tagName('input'));
+				var signInButton = element(by.id('signInButton'));
+			
+				signIn();
+				browser.waitForAngular();
+				browser.sleep(500);
+			
+				browser.get('http://localhost:4200/followers');
+				browser.waitForAngular();
+				browser.sleep(500);
+			
+				listItems.count().then(function(cnt){
+						max = cnt;
+				});
+		});
 
-	return origFn.apply(browser.driver.controlFlow(), args);
-};
+			it('Waleed should unfollow:', function () {
 
-describe('Following:', function () {
-
-	var EC = protractor.ExpectedConditions;
-
-	/*
-	first, sign in
-	*/
-	it('Preparation', function () {
-
-		browser.get('http://localhost:4200/');
-
-		var inputs = element(by.className('row')).all(by.tagName('input'));
-		var signInButton = element(by.id('signInButton'));
-
-		inputs.get(0).sendKeys('mai');
-		inputs.get(1).sendKeys('mai');
-		signInButton.click();
-		browser.get('http://localhost:4200/followers');
-		browser.refresh(10 * 1000);
-		//expect(browser.wait(EC.presenceOf(element(by.id('searchtextfollowing'))), 10 * 1000)).toBeTruthy();
-	});
-
-	/*
-	locate required elements for search
-	*/
-	var searchTextBox = element(by.id('searchtextfollower'));
-	var searchButton = element(by.id('searchfollower'));
-	var listItems = element.all(by.tagName('li'));
-
-	/*
-	searching function
-	*/
-    function search(inputText) {
-
-		searchTextBox.clear();
-		searchTextBox.sendKeys(inputText);
-		searchButton.click();
-	}
-
-	it('Should find 0 results for "abc"', function () {
-
-		search('abc');
-
-		expect(listItems.count()).toEqual(0);
-	});
-
-	it('Should find 2 results for "ahmed"', function () {
-
-		search('ahmed');
-
-		expect(listItems.count()).toEqual(2);
-	});
-
-	it('Should find 3 results for "ha"', function () {
-
-		search('ha');
-
-		expect(listItems.count()).toEqual(3);
-	});
-
-	it('Should find 6 results for " "', function () {
-
-		search(' ');
-
-		expect(listItems.count()).toEqual(6);
-	});
+					element(by.id('logOut')).click();
+					browser.waitForAngular();
+				
+					signIn('waleed@yahoo.com','password');
+					browser.waitForAngular();
+		
+					browser.get('http://localhost:4200/following');
+					browser.waitForAngular();
+				
+					element.all(by.id('stopfollow')).first().click();
+					browser.waitForAngular();
+				
+					element(by.id('logOut')).click();
+					browser.waitForAngular();
+				
+					signIn();
+					browser.waitForAngular();
+				
+					browser.get('http://localhost:4200/followers');
+					browser.waitForAngular();
+			
+					expect(listItems.count()).toEqual(max-1);
+			});
+			it('Waleed should follow again:', function () {
+				
+				element(by.id('logOut')).click();
+					browser.waitForAngular();
+				
+					signIn('waleed@yahoo.com','password');
+					browser.waitForAngular();
+		
+					browser.get('http://localhost:4200/followers');
+					browser.waitForAngular();
+				
+					element.all(by.id('followbutton')).first().click();
+					browser.waitForAngular();
+				
+					element(by.id('logOut')).click();
+					browser.waitForAngular();
+				
+					signIn();
+					browser.waitForAngular();
+				
+					browser.get('http://localhost:4200/followers');
+					browser.waitForAngular();
+			
+					expect(listItems.count()).toEqual(max);
+			});
 });

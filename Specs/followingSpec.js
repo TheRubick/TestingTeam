@@ -1,65 +1,106 @@
-﻿var origFn = browser.driver.controlFlow().execute;
-
-browser.driver.controlFlow().execute = function () {
-	var args = arguments;
-
-	/*
-	queue 200ms wait
-	*/
-	origFn.call(browser.driver.controlFlow(), function () {
-		return protractor.promise.delayed(300);
-	});
-
-	return origFn.apply(browser.driver.controlFlow(), args);
-};
-
-describe('Following:', function () {
-
+﻿
+describe('Following page', function() {
+	
 	var EC = protractor.ExpectedConditions;
-
+	
 	/*
 	locate required elements for search
 	*/
 	var searchTextBox = element(by.id('searchtextfollowing'));
 	var searchButton = element(by.id('searchfollowingg'));
 	var listItems = element.all(by.tagName('li'));
+	var max;
 
-	var max = listItems.count();
-
-	/*
-	first, sign in
-	*/
-	it('Preparation', function () {
+	beforeAll(function () {
 
 		browser.get('http://localhost:4200/');
-
-		var inputs = element(by.className('row')).all(by.tagName('input'));
+		browser.waitForAngular();
+		browser.sleep(500);
+			
+		var inputs = element.all(by.className('row')).get(0).all(by.tagName('input'));
 		var signInButton = element(by.id('signInButton'));
 
-		inputs.get(0).sendKeys('zachariah72@example.com');
+		inputs.get(0).sendKeys('test@yahoo.com');
 		inputs.get(1).sendKeys('password');
 		signInButton.click();
+		browser.waitForAngular();
+		browser.sleep(500);
+
 		browser.get('http://localhost:4200/following');
-		browser.refresh(10 * 1000);
-		//expect(browser.wait(EC.presenceOf(element(by.id('searchtextfollowing'))), 10 * 1000)).toBeTruthy();
+		browser.waitForAngular();
+		browser.sleep(500);
+
+		listItems.count().then(function(cnt){
+			max = cnt;
+		});
 	});
 
-	it('Should unfollow first person', function () {
+	/*
+	following list search tests
+	*/
+	describe('Following search:', function () {
 
-		listItems.get(0).all(by.id('stopfollow')).click();
+		/*
+		searching function
+		*/
+		function search(inputText) {
 
-		expect(listItems.count()).toEqual(max - 1);
+			searchTextBox.clear();
+			searchTextBox.sendKeys(inputText);
+			searchButton.click();
+			browser.waitForAngular();
+			browser.sleep(500);
+		}
+
+		it('Should find 0 results for "abc"', function () {
+
+			search('abc');
+
+			expect(listItems.count()).toEqual(1);
+		});
+
+		it('Should find 1 results for "he"', function () {
+
+			search('he');
+
+			expect(listItems.count()).toEqual(2);
+		});
+
+		it('Should find all results for ""', function () {
+
+			search('');
+
+			expect(listItems.count()).toEqual(max);
+		});
 	});
 
-	it('Should switch status of first person in followers', function () {
+	/*
+	follow/unfollow functionality tests
+	*/
+	describe('Following:', function () {
 
-		browser.get('http://localhost:4200/followers');
+		it('Should unfollow first person in following', function () {
 
-		var button = listItems.get(0).all(by.partialButtonText('follow'));
-		var beforeText = button.getText();
-		button.click();
-		browser.sleep(10 * 1000);
+			element.all(by.id('stopfollow')).first().click();
+			browser.waitForAngular();
+			browser.sleep(500);
 
-		expect(button.getText()).not.toEqual(beforeText);
-	}
+			expect(listItems.count()).toEqual(max - 1);
+		});
+
+		it('Should switch status of first person in followers', function () {
+
+			browser.get('http://localhost:4200/followers');
+			browser.waitForAngular();
+			browser.sleep(500);
+
+			var button = element.all(by.id('followbutton')).first();
+			var beforeText = button.getText();
+			button.click();
+			browser.waitForAngular();
+			browser.sleep(500);
+
+			expect(button.getText()).not.toEqual(beforeText);
+		});
+	});
 });

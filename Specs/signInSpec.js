@@ -1,4 +1,5 @@
-﻿describe('Sign in:', function () {
+﻿
+describe('Sign in:', function () {
 
 	var EC = protractor.ExpectedConditions;
 
@@ -16,10 +17,18 @@
 	var updatesHeader = element(by.id('updates'));
 
 	/*
+	input values to be used
+	*/
+	var varEmail = "test@yahoo.com";
+	var varPassword = "password";
+	var incorrectEmail = "abc";
+	var incorrectPassword = "321";
+
+	/*
 	a function to do the signing in process
 	default values are for successful sign in
 	*/
-	function signIn(inputEmail = 'zachariah72@example.net', inputPassword = 'password') {
+	function signIn(inputEmail = varEmail, inputPassword = varPassword) {
 
 		inputs.get(0).sendKeys(inputEmail);
 		inputs.get(1).sendKeys(inputPassword);
@@ -35,7 +44,9 @@
 		browser.ignoreSynchronization = true;
 		*/
 
-		browser.get('http://localhost:4200/');
+		browser.wait(browser.get('http://localhost:4200/'));
+		browser.waitForAngular();
+		browser.sleep(500);
 
 		/*
 		if logged in already, log out first
@@ -49,44 +60,45 @@
 
 	it('Should show incorrect credentials error', function () {
 
-		signIn('zachariah72@example.net', '123');
+		signIn(varEmail, incorrectPassword);
 
 		expect(errorText.getText()).toEqual('incorrect username or password');
 	});
 
 	it('Should show incorrect credentials error', function () {
 
-		signIn('zachariah72', 'password');
+		signIn(incorrectEmail, varPassword);
 
 		expect(errorText.getText()).toEqual('incorrect username or password');
 	});
 
 	it('Should show missing credentials error', function () {
 
-		signIn('zachariah72@example.net', '');
+		signIn(varEmail, '');
 
 		expect(errorText.getText()).toEqual('You must enter username and password');
 	});
 
 	it('Should show missing credentials error', function () {
 
-		signIn('', 'password');
+		signIn('', varPassword);
 
 		expect(errorText.getText()).toEqual('You must enter username and password');
 	});
 
 	it('Should sign in successfully', function () {
 
-		signIn('zachariah72@example.net', 'password');
+		signIn(varEmail, varPassword);
 
-		expect(browser.wait(EC.presenceOf(logOutButton), 5 * 1000)).toBeTruthy();
+		expect(browser.wait(EC.presenceOf(logOutButton))).toBeTruthy();
 	});
 
 	it('Should log out successfully', function () {
 
 		signIn();
+		browser.waitForAngular();
 		logOutButton.click();
 
-		expect(browser.wait(EC.presenceOf(signInButton), 5 * 1000)).toBeTruthy();
+		expect(browser.wait(EC.presenceOf(signInButton))).toBeTruthy();
 	});
 });

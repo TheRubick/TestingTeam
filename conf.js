@@ -18,12 +18,20 @@ var ScreenshotAndStackReporter = new HtmlScreenshotReporter({
 
 exports.config = {
   directConnect: true,
-	specs: ['Specs/signInSpec.js', 'Specs/signUpSpec.js', 'Specs/followingSearchSpec.js', 'Specs/followingSpec.js'],
-	multiCapabilities: [{
-		'browserName': 'firefox'
-	}, {
-		'browserName': 'chrome'
-	}],
+  specs: [/*'Specs/signInSpec.js', 'Specs/signUpSpec.js', 'Specs/followingSpec.js',*/
+         'Specs/followersSpec.js'/*, 'Specs/bookReviewSpec.js'*/],
+	multiCapabilities: [
+    // { 'browserName': 'firefox' },
+    { 'browserName': 'chrome' }
+  ],
+  
+  // Options to be passed to Jasmine.
+  jasmineNodeOpts: {
+    defaultTimeoutInterval: 100000
+  },
+  allScriptsTimeout: 100000,
+
+  maxSessions: 1,
 
   beforeLaunch: function () {
     return new Promise(function (resolve) {
@@ -38,6 +46,25 @@ exports.config = {
       savePath: reportsDirectory + '/xml',
       filePrefix: 'xmlOutput'
     }));
+
+    
+    // var originalTimeout = jasmine.DEFAULT_TIMEOUT_INTERVAL;
+    // jasmine.DEFAULT_TIMEOUT_INTERVAL = 100000;
+
+    var origFn = browser.driver.controlFlow().execute;
+
+    browser.driver.controlFlow().execute = function () {
+      var args = arguments;
+    
+      /*
+      queue 200ms wait
+      */
+      origFn.call(browser.driver.controlFlow(), function () {
+        return protractor.promise.delayed(200);
+      });
+    
+      return origFn.apply(browser.driver.controlFlow(), args);
+    };
 
     //Test Summary report creation
     jasmine.getEnv().addReporter(ScreenshotAndStackReporter);
