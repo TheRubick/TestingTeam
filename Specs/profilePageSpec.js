@@ -43,7 +43,7 @@ describe('Checking the Home page Functionalities', function ()  {
     /*
     redirect the browser to the profile page
     */
-    browser.get('http://localhost:4200/profile');
+    browser.get('http://ec2-3-87-221-152.compute-1.amazonaws.com/profile');
 
   });
 
@@ -116,7 +116,7 @@ describe('Checking the Home page Functionalities', function ()  {
     /*
     check if the browser is redirected to myBooks page or not
     */
-    expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/myBooks');
+    expect(browser.getCurrentUrl()).toEqual('http://ec2-3-87-221-152.compute-1.amazonaws.com/myBooks');
 
   });
 

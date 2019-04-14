@@ -43,7 +43,7 @@ describe('Checking the Home page Functionalities', function ()  {
   */
   it("first step is to check the successful log in ",function(){
 
-    browser.get('http://localhost:4200/login'); // redirect the browser to the login page
+    browser.get('http://ec2-3-87-221-152.compute-1.amazonaws.com/login'); // redirect the browser to the login page
     /*
     contain the locator through which it can access the sign in button
     */
@@ -71,7 +71,7 @@ describe('Checking the Home page Functionalities', function ()  {
   it("Checking home page button",function(){
 
     homePageButton.click();
-    expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/home');
+    expect(browser.getCurrentUrl()).toEqual('http://ec2-3-87-221-152.compute-1.amazonaws.com/home');
 
   });
 
@@ -81,7 +81,7 @@ describe('Checking the Home page Functionalities', function ()  {
   it("Checking website logo button",function(){
 
     logoButton.click();
-    expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/home');
+    expect(browser.getCurrentUrl()).toEqual('http://ec2-3-87-221-152.compute-1.amazonaws.com/home');
 
   });
 
@@ -91,7 +91,7 @@ describe('Checking the Home page Functionalities', function ()  {
   it("Checking the successful transfer from home page to the profile page ",function(){
 
     profilePageButton.click();
-    expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/profile');
+    expect(browser.getCurrentUrl()).toEqual('http://ec2-3-87-221-152.compute-1.amazonaws.com/profile');
 
   });
 
@@ -102,7 +102,7 @@ describe('Checking the Home page Functionalities', function ()  {
   it("Checking the successful transfer from home page to the followers page",function(){
 
     followersPageButton.click();
-    expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/followers');
+    expect(browser.getCurrentUrl()).toEqual('http://ec2-3-87-221-152.compute-1.amazonaws.com/followers');
 
   });
 
@@ -112,7 +112,7 @@ describe('Checking the Home page Functionalities', function ()  {
   it("Checking the successful transfer from home page to the following page",function(){
 
     followingPageButton.click();
-    expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/following');
+    expect(browser.getCurrentUrl()).toEqual('http://ec2-3-87-221-152.compute-1.amazonaws.com/following');
 
   });
 
@@ -122,7 +122,7 @@ describe('Checking the Home page Functionalities', function ()  {
   it("Checking the successful transfer from home page to the AboutUS page",function(){
 
     aboutUsButton.click();
-    expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/Aboutus');
+    expect(browser.getCurrentUrl()).toEqual('http://ec2-3-87-221-152.compute-1.amazonaws.com/Aboutus');
 
   });
 
@@ -133,7 +133,7 @@ describe('Checking the Home page Functionalities', function ()  {
   it("Checking the successful transfer from home page to the my books page",function(){
 
     myBooksPageButton.click();
-    expect(browser.getCurrentUrl()).toEqual('http://localhost:4200/myBooks');
+    expect(browser.getCurrentUrl()).toEqual('http://ec2-3-87-221-152.compute-1.amazonaws.com/myBooks');
 
   });
 
@@ -142,7 +142,7 @@ describe('Checking the Home page Functionalities', function ()  {
   */
   it("Checking the appearance of unfollow word after pressing on the follow button",function(){
 
-    browser.get('http://localhost:4200/home'); // redirect the browser to the home page
+    browser.get('http://ec2-3-87-221-152.compute-1.amazonaws.com/home'); // redirect the browser to the home page
     followButton.click();
     expect(followButton.getText()).toEqual('Unfollow ' + userNameVar);
 
