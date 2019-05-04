@@ -2,7 +2,7 @@
 
 /*
 Making delay
-*/
+
 var origFn = browser.driver.controlFlow().execute;
 
 browser.driver.controlFlow().execute = function() {
@@ -15,11 +15,12 @@ origFn.call(browser.driver.controlFlow(), function() {
 
 return origFn.apply(browser.driver.controlFlow(), args);
 };
+*/
 
 /*
 test scripts for testing the home page functionailites
 */
-describe('Checking the Home page Functionalities', function ()  {
+describe('Checking the Profile page Functionalities', function ()  {
 
   /*
   variables assigned with the locators in the Profile page
@@ -31,7 +32,7 @@ describe('Checking the Home page Functionalities', function ()  {
   /*
     some defualt variables for the user's name and password
   */
-  var userNameVar = "test@yahoo.com";
+  var userNameVar = "test";
   var userPasswordVar = "password";
 
 
@@ -43,7 +44,7 @@ describe('Checking the Home page Functionalities', function ()  {
     /*
     redirect the browser to the profile page
     */
-    browser.get('http://ec2-3-87-221-152.compute-1.amazonaws.com/profile');
+    profileButton.click();
 
   });
 
@@ -75,7 +76,7 @@ describe('Checking the Home page Functionalities', function ()  {
     /*
     expect the value of the profile's name in the book shelf section to be the same of the username
     */
-    expect(userNameProfilePage.get(0).getText()).toEqual(userNameVar + '\'S BOOKSHELVES ');
+    expect(userNameProfilePage.get(0).getText()).toEqual(userNameVar + '\'S BOOKSHELVES');
 
   });
 
@@ -87,7 +88,7 @@ describe('Checking the Home page Functionalities', function ()  {
     /*
     expect the value of the profile's name in the currently reading section to be the same of the username
     */
-    expect(userNameProfilePage.get(1).getText()).toEqual(userNameVar + ' IS CURRENTLY READING ');
+    expect(userNameProfilePage.get(1).getText()).toEqual(userNameVar + ' IS CURRENTLY READING');
 
   });
 
@@ -99,7 +100,7 @@ describe('Checking the Home page Functionalities', function ()  {
     /*
     expect the value of the profile's name in the recent updates section to be the same of the username
     */
-    expect(userNameProfilePage.get(2).getText()).toEqual(userNameVar + '\'S RECENT UPDATES ');
+    expect(userNameProfilePage.get(2).getText()).toEqual(userNameVar + '\'S RECENT UPDATES');
 
   });
 
@@ -116,7 +117,7 @@ describe('Checking the Home page Functionalities', function ()  {
     /*
     check if the browser is redirected to myBooks page or not
     */
-    expect(browser.getCurrentUrl()).toEqual('http://ec2-3-87-221-152.compute-1.amazonaws.com/myBooks');
+    expect(browser.getCurrentUrl()).toEqual('http://ec2-52-90-5-77.compute-1.amazonaws.com/app/myBooks');
 
   });
 

@@ -10,10 +10,10 @@ exports.config = {
   framework: 'jasmine',
   seleniumAddress: 'http://localhost:4444/wd/hub',
   specs: ['Specs/homePageSpec.js'],
-  multiCapabilities: [
-    {'browserName': 'chrome'},
-    {'browserName': 'firefox'},
-  ],
+   multiCapabilities: [
+  //   {'browserName': 'chrome'},
+  {'browserName': 'firefox'},
+   ],
 
 
 

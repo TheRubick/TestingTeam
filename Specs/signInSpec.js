@@ -32,7 +32,7 @@
 		browser.ignoreSynchronization = true;
 		*/
 
-		browser.get('http://ec2-3-87-221-152.compute-1.amazonaws.com/');
+		browser.get('http://ec2-3-87-221-152.compute-1.amazonaws.com/app/');
 	});
 
 	it('Should sign in successfuly', function () {

@@ -23,7 +23,7 @@ describe('Followers:', function () {
 		/*
 		first, sign in
 		*/
-		browser.get('http://ec2-3-87-221-152.compute-1.amazonaws.com/');
+		browser.get('http://ec2-3-87-221-152.compute-1.amazonaws.com/app/');
 
 		var inputs = element(by.className('row')).all(by.tagName('input'));
 		var signInButton = element(by.id('signInButton'));
@@ -61,7 +61,7 @@ describe('Followers:', function () {
 		// for non-angular pages
         // browser.ignoreSynchronization = true;
 
-				browser.get('http://ec2-3-87-221-152.compute-1.amazonaws.com/following');
+				browser.get('http://ec2-3-87-221-152.compute-1.amazonaws.com/app/following');
 	});
 
 	it('Should find 0 results', function () {
