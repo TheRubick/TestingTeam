@@ -1,59 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuites disabled="0" errors="0" failures="5" tests="13" time="76.93">
- <testsuite name="Checking the Home page Functionalities" timestamp="2019-04-14T11:38:15" hostname="localhost" time="76.93" errors="0" tests="13" skipped="0" disabled="0" failures="5">
-  <testcase classname="Checking the Home page Functionalities" name="first step is to check the successful log in " time="14.15" />
-  <testcase classname="Checking the Home page Functionalities" name="Checking home page button" time="7.341" />
-  <testcase classname="Checking the Home page Functionalities" name="Checking website logo button" time="3.466" />
-  <testcase classname="Checking the Home page Functionalities" name="Checking the successful transfer from home page to the profile page " time="4.915" />
-  <testcase classname="Checking the Home page Functionalities" name="Checking the successful transfer from home page to the followers page" time="5.295" />
-  <testcase classname="Checking the Home page Functionalities" name="Checking the successful transfer from home page to the following page" time="4.8" />
-  <testcase classname="Checking the Home page Functionalities" name="Checking the successful transfer from home page to the AboutUS page" time="3.521" />
-  <testcase classname="Checking the Home page Functionalities" name="Checking the successful transfer from home page to the my books page" time="4.493" />
-  <testcase classname="Checking the Home page Functionalities" name="Checking the appearance of unfollow word after pressing on the follow button" time="11.618">
-   <failure type="toEqual" message="Expected &apos;Follow TheLeader&apos; to equal &apos;Unfollow test&apos;."><![CDATA[Error: Failed expectation
-    at UserContext.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\homePageSpec.js:147:36)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:112:25
-    at new ManagedPromise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1077:7)
-    at ControlFlow.promise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2505:12)
-    at schedulerExecute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
-    at TaskQueue.execute_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
-    at TaskQueue.executeNext_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
-    at asyncRun (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2927:27)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7]]>
-   </failure>
-  </testcase>
-  <testcase classname="Checking the Home page Functionalities" name="Checking the appearance of follow word after pressing on the unfollow button" time="5.397">
-   <failure type="toEqual" message="Expected &apos;Follow TheLeader&apos; to equal &apos;follow test&apos;."><![CDATA[Error: Failed expectation
-    at UserContext.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\homePageSpec.js:154:36)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:112:25
-    at new ManagedPromise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1077:7)
-    at ControlFlow.promise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2505:12)
-    at schedulerExecute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
-    at TaskQueue.execute_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
-    at TaskQueue.executeNext_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
-    at asyncRun (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2927:27)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7]]>
-   </failure>
-  </testcase>
-  <testcase classname="Checking the Home page Functionalities" name="Checking the appearance of &quot;Read&quot; after pressing on the Read from the drop menu" time="4.191" />
-  <testcase classname="Checking the Home page Functionalities" name="Checking the appearance of &quot;Want to Read&quot; after pressing on the Want to Read from the drop menu" time="3.725">
-   <failure type="toEqual" message="Expected &apos;Read&apos; to equal &apos;Want to Read&apos;."><![CDATA[Error: Failed expectation
-    at UserContext.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\homePageSpec.js:183:33)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:112:25
-    at new ManagedPromise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1077:7)
-    at ControlFlow.promise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2505:12)
-    at schedulerExecute (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:95:18)
-    at TaskQueue.execute_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3084:14)
-    at TaskQueue.executeNext_ (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:3067:27)
-    at asyncRun (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2927:27)
-    at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:668:7]]>
-   </failure>
-  </testcase>
-  <testcase classname="Checking the Home page Functionalities" name="Checking the appearance of &quot;Currently reading&quot; after pressing on the Currently Reading from the drop menu" time="4.014">
-   <failure type="exception" message="Error: ENOENT: no such file or directory, open &apos;E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\reports\dashboardReport\firefox-Checking the Home page Functionalities Checking the appearance of &quot;Want to Read&quot; after pressing on the Want to Read from the drop menu.png&apos;"><![CDATA[Error: ENOENT: no such file or directory, open 'E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\reports\dashboardReport\firefox-Checking the Home page Functionalities Checking the appearance of "Want to Read" after pressing on the Want to Read from the drop menu.png']]>
-   </failure>
-   <failure type="toEqual" message="Expected &apos;Read&apos; to equal &apos;Currently Reading&apos;."><![CDATA[Error: Failed expectation
-    at UserContext.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\homePageSpec.js:195:33)
+<testsuites disabled="0" errors="0" failures="1" tests="30" time="141.707">
+ <testsuite name="Checking the Home page Functionalities" timestamp="2019-05-05T18:31:15" hostname="localhost" time="141.707" errors="0" tests="30" skipped="0" disabled="0" failures="1">
+  <testcase classname="Checking the Home page Functionalities" name="first step is to check the successful log in " time="12.649" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the search book button function " time="2.516" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the title radio button function &quot; success case &quot; " time="5.027" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the author name " time="1.968" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the rate of the book " time="8.782" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the status of the button to be Want To " time="4" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the status of the button to be Currently " time="3.968" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the status of the button to be Read " time="3.985" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the redirection to the book page " time="2.536" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the button status text " time="1.535" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the user rate" time="1.516" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the title radio button function &quot; success case &quot; " time="5.691" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the author name " time="1.969" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the rate of the book " time="10.042" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the status of the button to be Currently " time="4.022" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the status of the button to be Read " time="3.968" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the status of the button to be Want To " time="4.014" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the redirection to the book page " time="2.785" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the button status text " time="1.525" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the user rate" time="1.539" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the isbn radio button function &quot; success case &quot; " time="5.594" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the author name " time="1.921" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the rate of the book " time="11.403" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the status of the button to be Read " time="4" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the status of the button to be Want To " time="3.994" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the status of the button to be Currently " time="3.984" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the redirection to the book page " time="2.587" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the button status text " time="1.567" />
+  <testcase classname="Checking the Home page Functionalities" name="Checking the user rate" time="1.549" />
+  <testcase classname="Checking the Home page Functionalities" name="redirect to the profile page read case " time="21.069">
+   <failure type="toBe" message="Expected &apos;read (4)&apos; to be &apos;read (3)&apos;."><![CDATA[Error: Failed expectation
+    at UserContext.<anonymous> (E:\College\2nd Year\2nd term\Software Engineering\Project\Protractor\TestingTeam\Specs\bookSearchPageSpec.js:329:42)
     at C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\jasminewd2\index.js:112:25
     at new ManagedPromise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:1077:7)
     at ControlFlow.promise (C:\Users\Lenovo\AppData\Roaming\npm\node_modules\protractor\node_modules\selenium-webdriver\lib\promise.js:2505:12)

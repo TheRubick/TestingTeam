@@ -9,15 +9,18 @@ var  dashboardReportDirectory = reportsDirectory + '/dashboardReport';
 exports.config = {
   framework: 'jasmine',
   seleniumAddress: 'http://localhost:4444/wd/hub',
-  specs: ['Specs/homePageSpec.js'],
-  multiCapabilities: [
-    {'browserName': 'chrome'},
-    {'browserName': 'firefox'},
-  ],
+  specs: ['Specs/bookSearchPageSpec.js'],
+   multiCapabilities: [
+  //   {'browserName': 'chrome'},
+  {'browserName': 'firefox'},
+   ],
 
 
 
 onPrepare: function () {
+
+   browser.ignoreSynchronization = true;
+   browser.waitForAngular();
 
         /*
 		xml report generated for dashboard

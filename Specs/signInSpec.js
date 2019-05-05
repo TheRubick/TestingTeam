@@ -23,7 +23,7 @@
 		inputs.get(1).sendKeys(inputPassword);
 		signInButton.click();
 	}
-	
+
 	beforeEach(function() {
 
 		/*
@@ -32,7 +32,7 @@
 		browser.ignoreSynchronization = true;
 		*/
 
-		browser.get('http://localhost:4200/');
+		browser.get('http://ec2-3-87-221-152.compute-1.amazonaws.com/app/');
 	});
 
 	it('Should sign in successfuly', function () {
