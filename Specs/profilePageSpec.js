@@ -32,7 +32,7 @@ describe('Checking the Profile page Functionalities', function ()  {
   /*
     some defualt variables for the user's name and password
   */
-  var userNameVar = "test";
+  var userNameVar = "Muhamed";
   var userPasswordVar = "password";
 
 
@@ -81,26 +81,15 @@ describe('Checking the Profile page Functionalities', function ()  {
   });
 
   /*
-  Checking the profile name in the currently reading section to be the same as the user name
+  Checking the profile name in the book shelf section to be the same as the user name
   */
-  it("Checking the profile name in the currently reading section",function(){
+  it("Checking the follower",function(){
 
     /*
-    expect the value of the profile's name in the currently reading section to be the same of the username
+    expect the value of the profile's name in the book shelf section to be the same of the username
     */
-    expect(userNameProfilePage.get(1).getText()).toEqual(userNameVar + ' IS CURRENTLY READING');
-
-  });
-
-  /*
-  Checking the profile name in the recent updates section to be the same as the user name
-  */
-  it("Checking the profile name in the recent updates section",function(){
-
-    /*
-    expect the value of the profile's name in the recent updates section to be the same of the username
-    */
-    expect(userNameProfilePage.get(2).getText()).toEqual(userNameVar + '\'S RECENT UPDATES');
+    element(by.id("followName")).click();
+    expect(browser.getCurrentUrl()).toEqual('http://ec2-52-90-5-77.compute-1.amazonaws.com/app/#/profile/3');
 
   });
 
@@ -110,6 +99,7 @@ describe('Checking the Profile page Functionalities', function ()  {
 
   it("Should be directed to myBooks page",function(){
 
+    browser.get("http://ec2-52-90-5-77.compute-1.amazonaws.com/app/#/profile/");
     /*
     send click action to the "More.." href
     */
@@ -117,7 +107,7 @@ describe('Checking the Profile page Functionalities', function ()  {
     /*
     check if the browser is redirected to myBooks page or not
     */
-    expect(browser.getCurrentUrl()).toEqual('http://ec2-52-90-5-77.compute-1.amazonaws.com/app/myBooks');
+    expect(browser.getCurrentUrl()).toEqual('http://ec2-52-90-5-77.compute-1.amazonaws.com/app/#/myBooks/342');
 
   });
 
