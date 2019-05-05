@@ -9,7 +9,8 @@ describe('Sign in:', function () {
 	var inputs = element(by.className('row')).all(by.tagName('input'));
 	var signInButton = element(by.id('signInButton'));
 	var logOutButton = element(by.id('logOut'));
-	var errorText = element(by.className('row')).all(by.tagName('h6')).first();
+	var errorText = element(by.className('row')).all(by.tagName('p')).first();
+	var navBar = element(by.tagName('navbar'));
 
 	/*
 	locate updates header in home page
@@ -21,8 +22,9 @@ describe('Sign in:', function () {
 	*/
 	var varEmail = "test@yahoo.com";
 	var varPassword = "password";
-	var incorrectEmail = "abc";
-	var incorrectPassword = "321";
+	var incorrectEmail = "abcxyz@abcxyz";
+	var incorrectPassword = "123456";
+	var invalidEmail = "abc";
 
 	/*
 	a function to do the signing in process
@@ -34,6 +36,7 @@ describe('Sign in:', function () {
 		inputs.get(1).sendKeys(inputPassword);
 
 		signInButton.click();
+		browser.waitForAngular();
 	}
 	
 	beforeEach(function() {
@@ -44,32 +47,31 @@ describe('Sign in:', function () {
 		browser.ignoreSynchronization = true;
 		*/
 
-		browser.wait(browser.get('http://localhost:4200/'));
+		browser.wait(browser.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/app/'));
 		browser.waitForAngular();
-		browser.sleep(500);
 
 		/*
 		if logged in already, log out first
 		*/
-		logOutButton.isPresent().then(function (result) {
-			if (result) {
-				logOutButton.click();
-			}
-		});
+		// logOutButton.isPresent().then(function (result) {
+		// 	if (result) {
+		// 		logOutButton.click();
+		// 	}
+		// });
 	});
 
 	it('Should show incorrect credentials error', function () {
 
 		signIn(varEmail, incorrectPassword);
 
-		expect(errorText.getText()).toEqual('incorrect username or password');
+		expect(errorText.getText()).toEqual('The email or password is invalid.');
 	});
 
 	it('Should show incorrect credentials error', function () {
 
 		signIn(incorrectEmail, varPassword);
 
-		expect(errorText.getText()).toEqual('incorrect username or password');
+		expect(errorText.getText()).toEqual('The email or password is invalid.');
 	});
 
 	it('Should show missing credentials error', function () {
@@ -86,7 +88,16 @@ describe('Sign in:', function () {
 		expect(errorText.getText()).toEqual('You must enter username and password');
 	});
 
+	it('Should show invalid email error', function() {
+		signIn(invalidEmail, varPassword);
+
+		expect(errorText.getText()).toEqual('You must enter username and password')
+	})
+
 	it('Should sign in successfully', function () {
+
+		browser.waitForAngularEnabled(false);
+		browser.ignoreSynchronization = true;
 
 		signIn(varEmail, varPassword);
 
@@ -95,10 +106,12 @@ describe('Sign in:', function () {
 
 	it('Should log out successfully', function () {
 
-		signIn();
-		browser.waitForAngular();
-		logOutButton.click();
 
-		expect(browser.wait(EC.presenceOf(signInButton))).toBeTruthy();
+		// signIn();
+		// browser.waitForAngularEnabled(true);
+		logOutButton.click();
+		browser.waitForAngular();
+
+		expect(browser.wait(EC.stalenessOf(logOutButton))).toBeTruthy();
 	});
 });

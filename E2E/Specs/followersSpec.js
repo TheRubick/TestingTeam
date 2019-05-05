@@ -10,6 +10,8 @@ describe('Followers page', function() {
 		var searchButton = element(by.id('searchfollowingg'));
 		var listItems = element.all(by.tagName('li'));
 		var max;
+		var navBarFollowing = element(by.id('following'));
+		var navBarFollowers = element(by.id('followers'));
 	
 		/*
 		sign in elements
@@ -33,29 +35,33 @@ describe('Followers page', function() {
 				signInInputs.get(1).sendKeys(inputPassword);
 			
 				signInButton.click();
-				browser.waitForAngular();
-				browser.sleep(500);
+				// browser.waitForAngular();
+				browser.sleep(5000);
 		}
 	
 		beforeAll(function () {
 		
-				browser.get('http://localhost:4200/');
-				browser.waitForAngular();
-				browser.sleep(500);
+				browser.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/app/');
+				// browser.waitForAngular();
+				browser.sleep(5000);
 					
 				var inputs = element.all(by.className('row')).get(0).all(by.tagName('input'));
 				var signInButton = element(by.id('signInButton'));
+
+				browser.waitForAngularEnabled(false);
+				browser.ignoreSynchronization = true;
 			
 				signIn();
-				browser.waitForAngular();
-				browser.sleep(500);
+				// browser.waitForAngular();
+				browser.sleep(5000);
 			
-				browser.get('http://localhost:4200/followers');
-				browser.waitForAngular();
-				browser.sleep(500);
+				// browser.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/app/followers');
+				navBarFollowers.click();
+				// browser.waitForAngular();
+				browser.sleep(5000);
 			
 				listItems.count().then(function(cnt){
-						max = cnt;
+						max = parseInt(cnt.toString());
 				});
 		});
 
@@ -63,50 +69,69 @@ describe('Followers page', function() {
 
 					element(by.id('logOut')).click();
 					browser.waitForAngular();
+					browser.sleep(5000);
 				
 					signIn('waleed@yahoo.com','password');
-					browser.waitForAngular();
+					browser.sleep(5000);
+					// browser.waitForAngular();
 		
-					browser.get('http://localhost:4200/following');
-					browser.waitForAngular();
+					// browser.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/app/following');
+					navBarFollowing.click();
+					browser.sleep(5000);
+					// browser.waitForAngular();
 				
 					element.all(by.id('stopfollow')).first().click();
-					browser.waitForAngular();
+					browser.sleep(5000);
+					// browser.waitForAngular();
 				
 					element(by.id('logOut')).click();
-					browser.waitForAngular();
+					browser.sleep(5000);
+					// browser.waitForAngular();
 				
 					signIn();
-					browser.waitForAngular();
+					browser.sleep(5000);
+					// browser.waitForAngular();
 				
-					browser.get('http://localhost:4200/followers');
-					browser.waitForAngular();
+					// browser.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/app/followers');
+					navBarFollowers.click();
+					browser.sleep(5000);
+					// browser.waitForAngular();
 			
-					expect(listItems.count()).toEqual(max-1);
+					expect(listItems.count()).toEqual(max - 1);
 			});
+
 			it('Waleed should follow again:', function () {
 				
 				element(by.id('logOut')).click();
-					browser.waitForAngular();
-				
-					signIn('waleed@yahoo.com','password');
-					browser.waitForAngular();
-		
-					browser.get('http://localhost:4200/followers');
-					browser.waitForAngular();
-				
-					element.all(by.id('followbutton')).first().click();
-					browser.waitForAngular();
-				
-					element(by.id('logOut')).click();
-					browser.waitForAngular();
-				
-					signIn();
-					browser.waitForAngular();
-				
-					browser.get('http://localhost:4200/followers');
-					browser.waitForAngular();
+				browser.sleep(5000);
+				// browser.waitForAngular();
 			
-					expect(listItems.count()).toEqual(max);
+				signIn('waleed@yahoo.com','password');
+				browser.sleep(5000);
+				// browser.waitForAngular();
+	
+				// browser.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/app/followers');
+				navBarFollowers.click();
+				browser.sleep(5000);
+				// browser.waitForAngular();
+			
+				element.all(by.id('followbutton')).first().click();
+				browser.sleep(5000);
+				// browser.waitForAngular();
+			
+				element(by.id('logOut')).click();
+				browser.sleep(5000);
+				// browser.waitForAngular();
+			
+				signIn();
+				browser.sleep(5000);
+				// browser.waitForAngular();
+			
+				// browser.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/app/followers');
+				navBarFollowers.click();
+				browser.sleep(5000);
+				// browser.waitForAngular();
+		
+				expect(listItems.count()).toEqual(max);
 			});
 });

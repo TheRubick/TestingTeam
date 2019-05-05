@@ -18,8 +18,12 @@ var ScreenshotAndStackReporter = new HtmlScreenshotReporter({
 
 exports.config = {
   directConnect: true,
-  specs: [/*'Specs/signInSpec.js', 'Specs/signUpSpec.js', 'Specs/followingSpec.js',*/
-         'Specs/followersSpec.js'/*, 'Specs/bookReviewSpec.js'*/],
+  specs: [/*'Specs/signInSpec.js',
+          'Specs/signUpSpec.js',
+          'Specs/followingSpec.js',*//*
+          'Specs/followersSpec.js',
+          'Specs/bookReviewSpec.js',*/
+          'Specs/accountSettingsSpec.js'],
 	multiCapabilities: [
     // { 'browserName': 'firefox' },
     { 'browserName': 'chrome' }
@@ -57,10 +61,10 @@ exports.config = {
       var args = arguments;
     
       /*
-      queue 200ms wait
+      delay
       */
       origFn.call(browser.driver.controlFlow(), function () {
-        return protractor.promise.delayed(200);
+        return protractor.promise.delayed(10);
       });
     
       return origFn.apply(browser.driver.controlFlow(), args);

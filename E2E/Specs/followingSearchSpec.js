@@ -31,7 +31,7 @@ describe('Following:', function () {
 	*/
 	it('Preparation', function () {
 
-		browser.get('http://localhost:4200/');
+		browser.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/app/');
 
 		var inputs = element(by.className('row')).all(by.tagName('input'));
 		var signInButton = element(by.id('signInButton'));
@@ -39,7 +39,7 @@ describe('Following:', function () {
 		inputs.get(0).sendKeys('zachariah72@example.com');
 		inputs.get(1).sendKeys('password');
 		signInButton.click();
-		browser.get('http://localhost:4200/following');
+		browser.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/app/following');
 		browser.refresh(10 * 1000);
 		//expect(browser.wait(EC.presenceOf(element(by.id('searchtextfollowing'))), 10 * 1000)).toBeTruthy();
 	});

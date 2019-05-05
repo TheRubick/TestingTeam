@@ -9,13 +9,13 @@ describe('Sign up:', function () {
 	var inputs = element.all(by.className('row')).get(2).all(by.tagName('input'));
 	var signUpButton = element(by.id('signUpButton'));
 	var logOutButton = element(by.id('logOut'));
-	var errorText = element.all(by.className('row')).get(2).all(by.tagName('h6')).first();
+	var errorText = element(by.id('errorUp'));
 
 	/*
 	correct sign up data
 	*/
 	var varName = 'Test';
-	var varEmail = 'test4@example.com';
+	var varEmail = 'test_6@example.com';
 	var varPassword = '12345678';
 	var varConfirmPassword = '12345678';
 	var varGender = 'male';
@@ -27,11 +27,11 @@ describe('Sign up:', function () {
 	incorrect sign up data
 	*/
 	var empty = '';
-	var incorrectName = 'Ab';	// should be at least 3 characters
-	var incorrectEmail = 'test';	// should be in the form '<string>@<string>'
-	var incorrectPassword = '1234';	// should be at least 5 characters
-	var incorrectConfirmPassword = '1234';
-	var incorrectDate = ['01','01','2019'];	// should be more than 3 years old
+	var incorrectName = 'Ab';					// should be at least 3 characters
+	var incorrectEmail = 'test';				// should be in the form '<string>@<string>'
+	var incorrectPassword = '1234';				// should be at least 5 characters
+	var incorrectConfirmPassword = '654321';
+	var incorrectDate = ['01','01','2019'];		// should be more than 3 years old
 
 	/*
 	a function to do the signing in process
@@ -45,6 +45,7 @@ describe('Sign up:', function () {
 		signInInputs.get(1).sendKeys(inputPassword);
 
 		signInButton.click();
+		browser.waitForAngular();
 	}
 
 	/*
@@ -85,18 +86,18 @@ describe('Sign up:', function () {
 		browser.ignoreSynchronization = true;
 		*/
 
-		browser.get('http://localhost:4200/');
+		browser.get('http://ec2-52-90-5-77.compute-1.amazonaws.com/app/');
 		browser.waitForAngular();
 		browser.sleep(500);
 
 		/*
 		if logged in already, log out first
 		*/
-		logOutButton.isPresent().then(function (result) {
-			if (result) {
-				logOutButton.click();
-			}
-		});
+		// logOutButton.isPresent().then(function (result) {
+		// 	if (result) {
+		// 		logOutButton.click();
+		// 	}
+		// });
 	});
 
 	/*
@@ -107,7 +108,7 @@ describe('Sign up:', function () {
 		signUp(varName, empty, varPassword, varConfirmPassword, varGender, varDate, varCountry, varCity);
 		browser.wait(EC.presenceOf(errorText));
 
-		expect(errorText.getText()).toEqual('The email field is required.');
+		expect(errorText.getText()).toEqual('you must fill all boxes');
 	});
 
 	it('Should show missing password error', function () {
@@ -115,15 +116,15 @@ describe('Sign up:', function () {
 		signUp(varName, varEmail, empty, varConfirmPassword, varGender, varDate, varCountry, varCity);
 		browser.wait(EC.presenceOf(errorText));
 
-		expect(errorText.getText()).toEqual('The password field is required.');
+		expect(errorText.getText()).toEqual('you must fill all boxes');
 	});
 
-	it('Should show unmatched passwords error', function () {
+	it('Should show missing password confirmation error', function () {
 
 		signUp(varName, varEmail, varPassword, empty, varGender, varDate, varCountry, varCity);
 		browser.wait(EC.presenceOf(errorText));
 
-		expect(errorText.getText()).toEqual('The password confirmation does not match.');
+		expect(errorText.getText()).toEqual('you must fill all boxes');
 	});
 
 	it('Should show missing name error', function () {
@@ -131,7 +132,7 @@ describe('Sign up:', function () {
 		signUp(empty, varEmail, varPassword, varConfirmPassword, varGender, varDate, varCountry, varCity);
 		browser.wait(EC.presenceOf(errorText));
 
-		expect(errorText.getText()).toEqual('The name field is required.');
+		expect(errorText.getText()).toEqual('you must fill all boxes');
 	});
 
 	it('Should show missing gender error', function () {
@@ -139,7 +140,7 @@ describe('Sign up:', function () {
 		signUp(varName, varEmail, varPassword, varConfirmPassword, empty, varDate, varCountry, varCity);
 		browser.wait(EC.presenceOf(errorText));
 
-		expect(errorText.getText()).toEqual('The gender field is required.');
+		expect(errorText.getText()).toEqual('you must fill all boxes');
 	});
 
 	it('Should show missing birthdate error', function () {
@@ -147,7 +148,7 @@ describe('Sign up:', function () {
 		signUp(varName, varEmail, varPassword, varConfirmPassword, varGender, [empty,empty,empty], varCountry, varCity);
 		browser.wait(EC.presenceOf(errorText));
 
-		expect(errorText.getText()).toEqual('The birthday field is required.');
+		expect(errorText.getText()).toEqual('you must fill all boxes');
 	});
 
 	it('Should show missing country error', function () {
@@ -155,7 +156,7 @@ describe('Sign up:', function () {
 		signUp(varName, varEmail, varPassword, varConfirmPassword, varGender, varDate, empty, varCity);
 		browser.wait(EC.presenceOf(errorText));
 
-		expect(errorText.getText()).toEqual('The country field is required.');
+		expect(errorText.getText()).toEqual('you must fill all boxes');
 	});
 
 	it('Should show missing city error', function () {
@@ -163,33 +164,26 @@ describe('Sign up:', function () {
 		signUp(varName, varEmail, varPassword, varConfirmPassword, varGender, varDate, varCountry, empty);
 		browser.wait(EC.presenceOf(errorText));
 
-		expect(errorText.getText()).toEqual('The city field is required.');
-	});
-
-	it('Should sign up successfully', function () {
-
-		signUp(varName, varEmail, varPassword, varConfirmPassword, varGender, varDate, varCountry, varCity);
-
-		expect(browser.wait(EC.presenceOf(logOutButton))).toBeTruthy();
+		expect(errorText.getText()).toEqual('you must fill all boxes');
 	});
 
 	/*
-	unallowed data tests
+	data validation tests
 	*/
-	it('Should show missing email error', function () {
+	it('Should show invalid email error', function () {
 
 		signUp(varName, incorrectEmail, varPassword, varConfirmPassword, varGender, varDate, varCountry, varCity);
 		browser.wait(EC.presenceOf(errorText));
 
-		expect(errorText.getText()).toEqual('The email field is required.');
+		expect(errorText.getText()).toEqual('you must fill all boxes');
 	});
 
-	it('Should show missing password error', function () {
+	it('Should show invalid password error', function () {
 
-		signUp(varName, varEmail, incorrectPassword, varConfirmPassword, varGender, varDate, varCountry, varCity);
+		signUp(varName, varEmail, incorrectPassword, incorrectConfirmPassword, varGender, varDate, varCountry, varCity);
 		browser.wait(EC.presenceOf(errorText));
 
-		expect(errorText.getText()).toEqual('The password field is required.');
+		expect(errorText.getText()).toEqual('you must fill all boxes');
 	});
 
 	it('Should show unmatched passwords error', function () {
@@ -197,41 +191,56 @@ describe('Sign up:', function () {
 		signUp(varName, varEmail, varPassword, incorrectConfirmPassword, varGender, varDate, varCountry, varCity);
 		browser.wait(EC.presenceOf(errorText));
 
-		expect(errorText.getText()).toEqual('The password confirmation does not match.');
+		expect(errorText.getText()).toEqual('Password and password confirmation don\'t match');
 	});
 
-	it('Should show missing name error', function () {
+	it('Should show invalid name error', function () {
 
 		signUp(incorrectName, varEmail, varPassword, varConfirmPassword, varGender, varDate, varCountry, varCity);
 		browser.wait(EC.presenceOf(errorText));
 
-		expect(errorText.getText()).toEqual('The name field is required.');
+		expect(errorText.getText()).toEqual('you must fill all boxes');
 	});
 
-	it('Should show missing birthdate error', function () {
+	it('Should show invalid birthdate error', function () {
 
 		signUp(varName, varEmail, varPassword, varConfirmPassword, varGender, incorrectDate, varCountry, varCity);
 		browser.wait(EC.presenceOf(errorText));
 
-		expect(errorText.getText()).toEqual('The birthday field is required.');
+		expect(errorText.getText()).toEqual('You must be older than 3');
 	});
 
+
 	it('Should sign up successfully', function () {
+
+		browser.waitForAngularEnabled(false);
+		browser.ignoreSynchronization = true;
 
 		signUp(varName, varEmail, varPassword, varConfirmPassword, varGender, varDate, varCountry, varCity);
 
 		expect(browser.wait(EC.presenceOf(logOutButton))).toBeTruthy();
 	});
 
-
 	it('Should sign in successfully using new credentials', function () {
 
-		signIn('test@example.com', '12345678');
+		browser.sleep(1000);
+
+		logOutButton.click();
+		browser.waitForAngular();
+		browser.sleep(1000);
+
+		signIn(varEmail, varPassword);
 
 		expect(browser.wait(EC.presenceOf(logOutButton))).toBeTruthy();
 	});
 
 	it('Should show used email error', function () {
+
+		browser.sleep(1000);
+
+		logOutButton.click();
+		browser.waitForAngular();
+		browser.sleep(1000);
 
 		signUp(varName, varEmail, varPassword, varConfirmPassword, varGender, varDate, varCountry, varCity);
 		browser.wait(EC.presenceOf(errorText), 10000);
